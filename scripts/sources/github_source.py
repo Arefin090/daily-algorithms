@@ -30,9 +30,9 @@ class GitHubSource(BaseSource):
         try:
             # Instead of fetching all files, target specific algorithm directories
             algorithm_dirs = [
-                'sorts', 'searches', 'data_structures/binary_tree',
-                'data_structures/linked_list', 'dynamic_programming',
-                'graph', 'backtracking', 'greedy', 'divide_and_conquer'
+                'sorts', 'searches', 'data_structures',
+                'dynamic_programming', 'graphs', 'backtracking', 
+                'greedy_methods', 'divide_and_conquer'
             ]
             
             all_files = []
