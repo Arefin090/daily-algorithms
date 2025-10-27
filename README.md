@@ -18,7 +18,7 @@ problems/
     └── ...
 ```
 
-## Sources
+## Algorithm Sources
 
 Algorithms collected from:
 - [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python)
