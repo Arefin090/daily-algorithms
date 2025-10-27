@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "name": "TheAlgorithms-Python",
+      "type": "github",
+      "owner": "TheAlgorithms",
+      "repo": "Python",
+      "base_path": "",
+      "file_patterns": ["*.py"],
+      "exclude_patterns": ["test_*.py", "*test.py", "__pycache__", ".git"],
+      "enabled": true
+    },
+    {
+      "name": "TheAlgorithms-Java",
+      "type": "github", 
+      "owner": "TheAlgorithms",
+      "repo": "Java",
+      "base_path": "",
+      "file_patterns": ["*.java"],
+      "exclude_patterns": ["Test*.java", "*Test.java", "test", ".git"],
+      "enabled": false
+    },
+    {
+      "name": "keon-algorithms",
+      "type": "github",
+      "owner": "keon",
+      "repo": "algorithms",
+      "base_path": "",
+      "file_patterns": ["*.py"],
+      "exclude_patterns": ["test_*.py", "*test.py", "__pycache__", ".git"],
+      "enabled": false
+    }
+  ]
+}
