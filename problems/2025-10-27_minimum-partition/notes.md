@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Comparison with similar algorithms
+
 - Real-world application in search engines
 
 - 
