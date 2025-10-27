@@ -25,7 +25,7 @@ Algorithms collected from:
 - [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java)  
 - [keon/algorithms](https://github.com/keon/algorithms)
 
-## Notes
+## Study Notes
 
 Each algorithm includes:
 - Original implementation
