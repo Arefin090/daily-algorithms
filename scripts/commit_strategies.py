@@ -155,10 +155,10 @@ def get_commit_strategy() -> Tuple[str, str]:
     """Choose and execute a commit strategy."""
     
     strategies = [
-        (add_algorithm_study, 0.6),      # 60% - new algorithms
-        (improve_existing_notes, 0.25),  # 25% - improve notes  
-        (refactor_code, 0.1),            # 10% - code improvements
-        (update_documentation, 0.05),    # 5% - documentation
+        (add_algorithm_study, 0.3),      # 30% - new algorithms
+        (improve_existing_notes, 0.4),   # 40% - improve notes  
+        (refactor_code, 0.2),            # 20% - code improvements
+        (update_documentation, 0.1),     # 10% - documentation
     ]
     
     # Weighted random selection

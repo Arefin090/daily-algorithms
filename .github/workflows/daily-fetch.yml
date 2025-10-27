@@ -2,10 +2,18 @@ name: Algorithm Collection
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # Morning
-    - cron: '0 14 * * *'  # Afternoon  
-    - cron: '0 19 * * *'  # Evening
-    - cron: '30 21 * * *' # Night
+    - cron: '0 0 * * *'
+    - cron: '0 2 * * *'
+    - cron: '0 4 * * *'
+    - cron: '0 6 * * *'
+    - cron: '0 8 * * *'
+    - cron: '0 10 * * *'
+    - cron: '0 12 * * *'
+    - cron: '0 14 * * *'
+    - cron: '0 16 * * *'
+    - cron: '0 18 * * *'
+    - cron: '0 20 * * *'
+    - cron: '0 22 * * *'
   workflow_dispatch:
 
 permissions:

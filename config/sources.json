@@ -29,6 +29,26 @@
       "file_patterns": ["*.py"],
       "exclude_patterns": ["test_*.py", "*test.py", "__pycache__", ".git"],
       "enabled": true
+    },
+    {
+      "name": "TheAlgorithms-C",
+      "type": "github",
+      "owner": "TheAlgorithms",
+      "repo": "C",
+      "base_path": "",
+      "file_patterns": ["*.c"],
+      "exclude_patterns": ["test", ".git"],
+      "enabled": true
+    },
+    {
+      "name": "TheAlgorithms-JavaScript",
+      "type": "github",
+      "owner": "TheAlgorithms",
+      "repo": "JavaScript",
+      "base_path": "",
+      "file_patterns": ["*.js"],
+      "exclude_patterns": ["test", ".git"],
+      "enabled": true
     }
   ]
 }
