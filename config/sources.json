@@ -18,7 +18,7 @@
       "base_path": "",
       "file_patterns": ["*.java"],
       "exclude_patterns": ["Test*.java", "*Test.java", "test", ".git"],
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "keon-algorithms",
@@ -28,7 +28,7 @@
       "base_path": "",
       "file_patterns": ["*.py"],
       "exclude_patterns": ["test_*.py", "*test.py", "__pycache__", ".git"],
-      "enabled": false
+      "enabled": true
     }
   ]
 }

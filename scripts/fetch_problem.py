@@ -157,11 +157,52 @@ class ProblemFetcher:
                 print("Algorithm collection completed successfully!")
                 return True
             else:
-                print("Failed to fetch algorithm")
-                return False
+                print("Primary algorithm fetch failed, executing fallback...")
+                return self._execute_fallback()
                 
         except Exception as e:
             print(f"Error during problem fetch: {e}")
+            print("Executing fallback strategy...")
+            return self._execute_fallback()
+    
+    def _execute_fallback(self) -> bool:
+        """Execute fallback strategy to ensure daily commit."""
+        try:
+            # Import fallback module
+            import sys
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
+            from fallback_commits import execute_fallback
+            
+            file_path, commit_msg = execute_fallback()
+            
+            if self.commit_and_push_fallback(file_path, commit_msg):
+                print(f"Fallback completed successfully: {commit_msg}")
+                return True
+            else:
+                print("Fallback commit failed")
+                return False
+                
+        except Exception as e:
+            print(f"Fallback execution failed: {e}")
+            return False
+    
+    def commit_and_push_fallback(self, file_path: str, commit_message: str) -> bool:
+        """Commit fallback changes and push."""
+        if not is_git_repo():
+            print("Not in a git repository, skipping commit")
+            return False
+        
+        if git_add_and_commit(file_path, commit_message):
+            print("Fallback changes committed successfully")
+            
+            if git_push():
+                print("Fallback changes pushed to remote repository")
+                return True
+            else:
+                print("Failed to push fallback changes")
+                return False
+        else:
+            print("No fallback changes to commit")
             return False
 
 

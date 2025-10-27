@@ -2,8 +2,10 @@ name: Algorithm Collection
 
 on:
   schedule:
-    # Runs daily at 9:00 AM UTC (adjust timezone as needed)
-    - cron: '0 9 * * *'
+    # Multiple runs to ensure success - at least one will work
+    - cron: '0 9 * * *'   # 9 AM UTC  
+    - cron: '0 14 * * *'  # 2 PM UTC (backup)
+    - cron: '0 20 * * *'  # 8 PM UTC (final backup)
   workflow_dispatch:  # Allow manual triggering for testing
 
 permissions:
@@ -32,8 +34,8 @@ jobs:
     
     - name: Configure Git
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "101785779+Arefin090@users.noreply.github.com"
+        git config --local user.name "Arefin N. Sojol"
     
     - name: Check for existing problems today
       id: check_today
