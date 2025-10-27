@@ -1,0 +1,84 @@
+name: Algorithm Collection
+
+on:
+  schedule:
+    # Runs daily at 9:00 AM UTC (adjust timezone as needed)
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # Allow manual triggering for testing
+
+permissions:
+  contents: write  # Required to push commits
+
+jobs:
+  fetch-algorithm:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0  # Fetch full history for proper git operations
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    
+    - name: Check for existing problems today
+      id: check_today
+      run: |
+        today=$(date +%Y-%m-%d)
+        if [ -d "problems" ] && ls problems/ | grep -q "^${today}_"; then
+          echo "exists=true" >> $GITHUB_OUTPUT
+          echo "Problem already exists for today: ${today}"
+        else
+          echo "exists=false" >> $GITHUB_OUTPUT
+          echo "No problem found for today: ${today}"
+        fi
+    
+    - name: Collect algorithm
+      if: steps.check_today.outputs.exists == 'false'
+      run: |
+        python scripts/fetch_problem.py
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+    
+    - name: Check for changes
+      id: check_changes
+      if: steps.check_today.outputs.exists == 'false'
+      run: |
+        if git diff --quiet && git diff --cached --quiet; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+          echo "No changes detected"
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+          echo "Changes detected"
+        fi
+    
+    - name: Push changes
+      if: steps.check_today.outputs.exists == 'false' && steps.check_changes.outputs.changes == 'true'
+      run: |
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Summary
+      run: |
+        if [ "${{ steps.check_today.outputs.exists }}" == "true" ]; then
+          echo "✅ Already have today's algorithm - skipping"
+        elif [ "${{ steps.check_changes.outputs.changes }}" == "true" ]; then
+          echo "✅ Successfully added new algorithm"
+        else
+          echo "ℹ️  No new algorithms available"
+        fi
