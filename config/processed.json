@@ -1,4 +1,11 @@
 {
-  "processed_files": [],
-  "last_updated": null
+  "processed_files": [
+    {
+      "file_path": "searches/simple_binary_search.py",
+      "source": "TheAlgorithms-Python",
+      "folder_name": "2025-10-27_simple-binary-search",
+      "processed_date": "2025-10-27T05:48:29.480330"
+    }
+  ],
+  "last_updated": "2025-10-27T05:48:29.480337"
 }
