@@ -6,11 +6,8 @@ from typing import Optional
 def git_add_and_commit(folder_path: str, commit_message: str) -> bool:
     """Add files and create a git commit."""
     try:
-        # Add the new folder
-        subprocess.run(['git', 'add', folder_path], check=True, cwd=os.getcwd())
-        
-        # Add config files (in case processed.json was updated)
-        subprocess.run(['git', 'add', 'config/'], check=True, cwd=os.getcwd())
+        # Add all changes (new files, modifications, etc.)
+        subprocess.run(['git', 'add', '.'], check=True, cwd=os.getcwd())
         
         # Check if there are changes to commit
         result = subprocess.run(['git', 'diff', '--cached', '--quiet'], 
