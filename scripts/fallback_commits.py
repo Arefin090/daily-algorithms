@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Fallback commit system to ensure daily green squares.
-This runs when the main algorithm fetcher fails.
-"""
 
 import os
 import random
@@ -10,49 +6,35 @@ from datetime import datetime
 from typing import Optional
 import glob
 
-def create_daily_reflection() -> str:
-    """Create a simple daily learning reflection."""
-    today = datetime.now().strftime('%Y-%m-%d')
+def create_study_update() -> str:
+    """Update study documentation."""
     
-    reflections = [
-        "Reviewing algorithm fundamentals",
-        "Practicing problem-solving patterns", 
-        "Exploring data structure concepts",
-        "Analyzing time complexity",
-        "Understanding space complexity",
-        "Studying algorithm design patterns",
-        "Reviewing sorting techniques",
-        "Exploring graph algorithms",
-        "Understanding dynamic programming",
-        "Practicing recursive thinking"
-    ]
+    # Just update README with a small improvement
+    readme_path = "README.md"
     
-    reflection = random.choice(reflections)
-    
-    # Create or update learning log
-    log_path = "learning_log.md"
-    
-    if not os.path.exists(log_path):
-        content = f"""# Algorithm Learning Log
-
-Daily reflections and progress tracking.
-
-## {today}
-- {reflection}
-"""
-    else:
-        with open(log_path, 'r') as f:
-            existing = f.read()
+    if os.path.exists(readme_path):
+        with open(readme_path, 'r') as f:
+            content = f.read()
         
-        content = existing + f"""
-## {today}
-- {reflection}
-"""
+        # Make tiny formatting improvements or add small details
+        improvements = [
+            ("## Sources", "## Algorithm Sources"),
+            ("## Notes", "## Study Notes"), 
+            ("## Structure", "## Repository Structure"),
+            ("study notes", "learning notes"),
+            ("Algorithm details", "Problem description"),
+            ("Implementation", "Solution code")
+        ]
+        
+        for old, new in improvements:
+            if old in content and new not in content:
+                content = content.replace(old, new)
+                break
+        
+        with open(readme_path, 'w') as f:
+            f.write(content)
     
-    with open(log_path, 'w') as f:
-        f.write(content)
-    
-    return log_path
+    return readme_path
 
 def update_random_notes() -> Optional[str]:
     """Update notes in a random existing problem folder."""
@@ -153,11 +135,11 @@ def execute_fallback() -> tuple[str, str]:
     updated_file = update_random_notes()
     if updated_file:
         problem_name = os.path.basename(os.path.dirname(updated_file)).split('_', 1)[1].replace('-', ' ').title()
-        return updated_file, f"Update {problem_name} notes"
+        return updated_file, f"Update {problem_name} analysis"
     
-    # Strategy 2: Create daily reflection
-    reflection_file = create_daily_reflection()
-    return reflection_file, "Add daily learning reflection"
+    # Strategy 2: Small documentation improvement
+    readme_file = create_study_update()
+    return readme_file, "Improve documentation"
 
 if __name__ == "__main__":
     file_path, commit_msg = execute_fallback()

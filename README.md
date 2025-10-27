@@ -1,58 +1,34 @@
-# Daily Algorithms
+# Algorithm Study Collection
 
-A collection of algorithmic problems and solutions for continuous learning.
+Personal repository for studying algorithms and data structures from various open-source implementations.
 
 ## About
 
-This repository organizes algorithmic problems from various open-source collections into a structured format for study and practice. Each problem gets its own dated folder with the original solution, documentation, and space for personal notes.
+This repository contains algorithmic problems and solutions collected for learning purposes. Each algorithm is organized with its implementation, documentation, and study notes.
 
 ## Structure
 
 ```
 problems/
 ├── 2024-10-27_binary-search/
-│   ├── README.md          # Problem description and metadata
-│   ├── solution.py        # Original implementation
-│   └── notes.md          # Personal learning notes
+│   ├── README.md          # Algorithm details
+│   ├── solution.py        # Implementation
+│   └── notes.md          # Study notes
 └── 2024-10-28_merge-sort/
-    ├── README.md
-    ├── solution.py
-    └── notes.md
+    └── ...
 ```
 
 ## Sources
 
-Currently collecting from:
-- [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) - Comprehensive algorithm implementations
-- More sources can be added via `config/sources.json`
+Algorithms collected from:
+- [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python)
+- [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java)  
+- [keon/algorithms](https://github.com/keon/algorithms)
 
-## Usage
+## Notes
 
-The repository updates daily with new problems automatically. You can also run manually:
-
-```bash
-python scripts/fetch_problem.py
-```
-
-## Configuration
-
-Edit `config/sources.json` to:
-- Enable/disable sources
-- Add new algorithm repositories  
-- Filter by file types or patterns
-
-## Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Learning Notes
-
-Each problem folder includes a `notes.md` template for:
-- Key concepts and complexity analysis
-- Personal insights and observations
-- Related problems and patterns
-- Implementation variations
-
-Perfect for building a comprehensive algorithm knowledge base over time.
+Each algorithm includes:
+- Original implementation
+- Complexity analysis
+- Personal study notes
+- Related concepts

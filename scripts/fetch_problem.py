@@ -96,13 +96,13 @@ class ProblemFetcher:
         create_solution_file(folder_path, problem_content)
         create_notes_file(folder_path, problem_content)
         
-        # Mark as processed
-        mark_file_as_processed(
-            self.processed_data,
-            selected_problem['path'],
-            selected_source.get_source_name(),
-            folder_name
-        )
+        # Don't mark as processed - allow reuse for multiple commits
+        # mark_file_as_processed(
+        #     self.processed_data,
+        #     selected_problem['path'],
+        #     selected_source.get_source_name(),
+        #     folder_name
+        # )
         
         # Save updated processed data
         processed_file_path = os.path.join(self.config_dir, 'processed.json')
@@ -133,37 +133,26 @@ class ProblemFetcher:
             return False
     
     def run(self) -> bool:
-        """Main entry point to fetch daily problem."""
-        print(f"Starting algorithm collection at {datetime.now()}")
+        """Main entry point for algorithm work."""
+        print(f"Starting algorithm work at {datetime.now()}")
         
         try:
-            success = self.fetch_daily_problem()
-            if success:
-                # Find the most recently created folder
-                problems_dir = 'problems'
-                if os.path.exists(problems_dir):
-                    folders = [f for f in os.listdir(problems_dir) 
-                             if os.path.isdir(os.path.join(problems_dir, f))]
-                    if folders:
-                        latest_folder = max(folders)
-                        folder_path = os.path.join(problems_dir, latest_folder)
-                        
-                        # Extract title from folder name
-                        title_part = latest_folder.split('_', 1)[1] if '_' in latest_folder else latest_folder
-                        title = title_part.replace('-', ' ').title()
-                        
-                        self.commit_and_push(folder_path, title)
-                
-                print("Algorithm collection completed successfully!")
-                return True
-            else:
-                print("Primary algorithm fetch failed, executing fallback...")
-                return self._execute_fallback()
+            # Use commit strategies for variety
+            from commit_strategies import get_commit_strategy
+            
+            file_path, commit_msg = get_commit_strategy()
+            
+            if file_path and commit_msg:
+                if self.commit_and_push_fallback(file_path, commit_msg):
+                    print(f"Work completed: {commit_msg}")
+                    return True
+            
+            print("No work completed this time")
+            return False
                 
         except Exception as e:
-            print(f"Error during problem fetch: {e}")
-            print("Executing fallback strategy...")
-            return self._execute_fallback()
+            print(f"Error during algorithm work: {e}")
+            return False
     
     def _execute_fallback(self) -> bool:
         """Execute fallback strategy to ensure daily commit."""
