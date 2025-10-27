@@ -1,6 +1,8 @@
 import requests
 import base64
 import re
+import os
+import time
 from typing import Dict, List, Optional, Any
 from .base_source import BaseSource, ProblemContent
 
@@ -16,12 +18,34 @@ class GitHubSource(BaseSource):
         self.file_patterns = config.get('file_patterns', ['*.py'])
         self.exclude_patterns = config.get('exclude_patterns', [])
         self.api_base = 'https://api.github.com'
+        self.headers = {}
+        
+        # Use GitHub token if available for higher rate limits
+        github_token = os.environ.get('GITHUB_TOKEN')
+        if github_token:
+            self.headers['Authorization'] = f'token {github_token}'
     
     def fetch_available_problems(self) -> List[Dict[str, Any]]:
-        """Fetch all Python files from the repository."""
+        """Fetch Python files from specific algorithm directories."""
         try:
-            files = self._get_repository_files()
-            filtered_files = self._filter_files(files)
+            # Instead of fetching all files, target specific algorithm directories
+            algorithm_dirs = [
+                'sorts', 'searches', 'data_structures/binary_tree',
+                'data_structures/linked_list', 'dynamic_programming',
+                'graph', 'backtracking', 'greedy', 'divide_and_conquer'
+            ]
+            
+            all_files = []
+            for directory in algorithm_dirs:
+                try:
+                    files = self._get_repository_files(directory)
+                    all_files.extend(files)
+                    time.sleep(0.1)  # Rate limiting
+                except Exception as e:
+                    print(f"Could not fetch from {directory}: {e}")
+                    continue
+            
+            filtered_files = self._filter_files(all_files)
             return [{'path': f['path'], 'sha': f['sha'], 'url': f['url']} for f in filtered_files]
         except Exception as e:
             print(f"Error fetching from {self.name}: {e}")
@@ -31,7 +55,7 @@ class GitHubSource(BaseSource):
         """Get content for a specific file."""
         try:
             url = f"{self.api_base}/repos/{self.owner}/{self.repo}/contents/{problem_info['path']}"
-            response = requests.get(url)
+            response = requests.get(url, headers=self.headers)
             response.raise_for_status()
             
             data = response.json()
@@ -61,7 +85,7 @@ class GitHubSource(BaseSource):
     def _get_repository_files(self, path: str = '') -> List[Dict[str, Any]]:
         """Recursively get all files from repository."""
         url = f"{self.api_base}/repos/{self.owner}/{self.repo}/contents/{path}"
-        response = requests.get(url)
+        response = requests.get(url, headers=self.headers)
         response.raise_for_status()
         
         items = response.json()

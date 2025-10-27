@@ -53,6 +53,7 @@ jobs:
         python scripts/fetch_problem.py
       env:
         PYTHONPATH: ${{ github.workspace }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Check for changes
       id: check_changes
