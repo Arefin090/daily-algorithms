@@ -10,7 +10,6 @@ python3 simple_binary_search.py
 
 from __future__ import annotations
 
-
 def binary_search(a_list: list[int], item: int) -> bool:
     """
     >>> test_list = [0, 1, 2, 8, 13, 17, 19, 32, 42]
@@ -50,7 +49,6 @@ def binary_search(a_list: list[int], item: int) -> bool:
         return binary_search(a_list[:midpoint], item)
     else:
         return binary_search(a_list[midpoint + 1 :], item)
-
 
 if __name__ == "__main__":
     user_input = input("Enter numbers separated by comma:\n").strip()
