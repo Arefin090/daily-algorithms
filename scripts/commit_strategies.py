@@ -151,6 +151,26 @@ def update_documentation() -> Tuple[str, str]:
     
     return None, None
 
+def create_guaranteed_commit() -> Tuple[str, str]:
+    """Create a guaranteed commit when all else fails."""
+    import uuid
+    
+    # Create a simple progress file
+    progress_file = "PROGRESS.md"
+    today = datetime.now().strftime('%Y-%m-%d')
+    
+    if not os.path.exists(progress_file):
+        content = f"# Learning Progress\n\n## {today}\n- Continued algorithm study\n"
+    else:
+        with open(progress_file, 'r') as f:
+            content = f.read()
+        content += f"\n## {today}\n- Algorithm review session\n"
+    
+    with open(progress_file, 'w') as f:
+        f.write(content)
+    
+    return progress_file, "Update progress"
+
 def get_commit_strategy() -> Tuple[str, str]:
     """Choose and execute a commit strategy."""
     
@@ -176,5 +196,16 @@ def get_commit_strategy() -> Tuple[str, str]:
                 print(f"Strategy {strategy.__name__} failed: {e}")
                 continue
     
-    # Final fallback
-    return update_documentation()
+    # Try all strategies if random selection failed
+    for strategy, _ in strategies:
+        try:
+            file_path, commit_msg = strategy()
+            if file_path and commit_msg:
+                return file_path, commit_msg
+        except Exception as e:
+            print(f"Fallback strategy {strategy.__name__} failed: {e}")
+            continue
+    
+    # Guaranteed final fallback - never fails
+    print("All strategies failed, using guaranteed commit")
+    return create_guaranteed_commit()
