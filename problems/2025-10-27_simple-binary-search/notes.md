@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Alternative: iterative vs recursive approach
+
 - Optimization: early termination condition
 
 - Memory usage: O(1) space optimization possible
