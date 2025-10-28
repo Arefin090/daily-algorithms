@@ -4,7 +4,7 @@ Personal repository for studying algorithms and data structures from various ope
 
 ## About
 
-This repository contains algorithmic problems and solutions collected for learning purposes. Each algorithm is organized with its implementation, documentation, and study notes.
+This repository contains algorithmic problems and solutions collected for learning purposes. Each algorithm is organized with its implementation, documentation, and learning notes.
 
 ## Structure
 
@@ -30,5 +30,5 @@ Algorithms collected from:
 Each algorithm includes:
 - Original implementation
 - Complexity analysis
-- Personal study notes
+- Personal learning notes
 - Related concepts
