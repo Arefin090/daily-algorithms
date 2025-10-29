@@ -8,7 +8,6 @@ bitmask are set
 
 from __future__ import annotations
 
-
 def list_of_submasks(mask: int) -> list[int]:
     """
     Args:
@@ -54,7 +53,6 @@ def list_of_submasks(mask: int) -> list[int]:
         submask = (submask - 1) & mask
 
     return all_submasks
-
 
 if __name__ == "__main__":
     import doctest
