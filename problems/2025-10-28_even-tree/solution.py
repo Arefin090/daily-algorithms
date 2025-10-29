@@ -16,7 +16,6 @@ components containing an even number of nodes.
 # pylint: disable=invalid-name
 from collections import defaultdict
 
-
 def dfs(start: int) -> int:
     """DFS traversal"""
     # pylint: disable=redefined-outer-name
@@ -28,7 +27,6 @@ def dfs(start: int) -> int:
     if ret % 2 == 0:
         cuts.append(start)
     return ret
-
 
 def even_tree():
     """
@@ -44,7 +42,6 @@ def even_tree():
     On removing edges (1,3) and (1,6), we can get the desired result 2.
     """
     dfs(1)
-
 
 if __name__ == "__main__":
     n, m = 10, 9
