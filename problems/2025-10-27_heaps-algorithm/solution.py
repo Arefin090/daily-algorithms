@@ -6,7 +6,6 @@ More information:
 https://en.wikipedia.org/wiki/Heap%27s_algorithm.
 """
 
-
 def heaps(arr: list) -> list:
     """
     Pure python implementation of the Heap's algorithm (recursive version),
@@ -48,7 +47,6 @@ def heaps(arr: list) -> list:
 
     generate(len(arr), arr)
     return res
-
 
 if __name__ == "__main__":
     user_input = input("Enter numbers separated by a comma:\n").strip()
