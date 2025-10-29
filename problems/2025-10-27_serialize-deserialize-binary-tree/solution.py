@@ -3,7 +3,6 @@ from __future__ import annotations
 from collections.abc import Iterator
 from dataclasses import dataclass
 
-
 @dataclass
 class TreeNode:
     """
@@ -82,7 +81,6 @@ class TreeNode:
         root.right.right = TreeNode(5)
         return root
 
-
 def deserialize(data: str) -> TreeNode | None:
     """
     Deserialize a string to a binary tree.
@@ -132,7 +130,6 @@ def deserialize(data: str) -> TreeNode | None:
         return node
 
     return build_tree()
-
 
 if __name__ == "__main__":
     import doctest
