@@ -2,7 +2,6 @@
 Partition a set into two subsets such that the difference of subset sums is minimum
 """
 
-
 def find_min(numbers: list[int]) -> int:
     """
     >>> find_min([1, 2, 3, 4, 5])
@@ -68,7 +67,6 @@ def find_min(numbers: list[int]) -> int:
             break
 
     return diff
-
 
 if __name__ == "__main__":
     from doctest import testmod
