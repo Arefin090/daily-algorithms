@@ -3,7 +3,6 @@ from __future__ import annotations
 arr = [-10, -5, 0, 5, 5.1, 11, 13, 21, 3, 4, -21, -10, -5, -1, 0]
 expect = [-5, 0, 5, 5.1, 11, 13, 21, -1, 4, -1, -10, -5, -1, 0, -1]
 
-
 def next_greatest_element_slow(arr: list[float]) -> list[float]:
     """
     Get the Next Greatest Element (NGE) for each element in the array
@@ -36,7 +35,6 @@ def next_greatest_element_slow(arr: list[float]) -> list[float]:
         result.append(next_element)
     return result
 
-
 def next_greatest_element_fast(arr: list[float]) -> list[float]:
     """
     Find the Next Greatest Element (NGE) for each element in the array
@@ -66,7 +64,6 @@ def next_greatest_element_fast(arr: list[float]) -> list[float]:
                 break
         result.append(next_item)
     return result
-
 
 def next_greatest_element(arr: list[float]) -> list[float]:
     """
@@ -104,7 +101,6 @@ def next_greatest_element(arr: list[float]) -> list[float]:
             result[index] = stack[-1]
         stack.append(arr[index])
     return result
-
 
 if __name__ == "__main__":
     from doctest import testmod
