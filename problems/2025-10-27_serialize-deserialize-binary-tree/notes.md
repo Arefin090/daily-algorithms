@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Comparison with similar algorithms
+
 - Alternative: iterative vs recursive approach
 
 - Optimization: early termination condition
