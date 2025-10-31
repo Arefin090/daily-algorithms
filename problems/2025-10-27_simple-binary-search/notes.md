@@ -16,6 +16,8 @@
 
 - Memory usage: O(1) space optimization possible
 
+- Memory usage: O(1) space optimization possible
+
 - Optimization: early termination condition
 
 - Performance: best/average/worst case analysis
