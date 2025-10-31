@@ -16,6 +16,8 @@
 
 - Implementation variant in different languages
 
+- Implementation variant in different languages
+
 - Real-world application in search engines
 
 - 
