@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import math
 
-
 def minimax(
     depth: int, node_index: int, is_max: bool, scores: list[int], height: float
 ) -> int:
@@ -77,7 +76,6 @@ def minimax(
         minimax(depth + 1, node_index * 2 + 1, True, scores, height),
     )
 
-
 def main() -> None:
     # Sample scores and height calculation
     scores = [90, 23, 6, 33, 21, 65, 123, 34423]
@@ -86,7 +84,6 @@ def main() -> None:
     # Calculate and print the optimal value using the minimax algorithm
     print("Optimal value : ", end="")
     print(minimax(0, 0, True, scores, height))
-
 
 if __name__ == "__main__":
     import doctest
