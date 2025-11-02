@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Real-world application in search engines
+
 - Memory usage: O(1) space optimization possible
 
 - Comparison with similar algorithms
