@@ -6,7 +6,6 @@ the given types of coins?
 https://www.hackerrank.com/challenges/coin-change/problem
 """
 
-
 def dp_count(s, n):
     """
     >>> dp_count([1, 2, 3], 4)
@@ -38,7 +37,6 @@ def dp_count(s, n):
             table[j] += table[j - coin_val]
 
     return table[n]
-
 
 if __name__ == "__main__":
     import doctest
