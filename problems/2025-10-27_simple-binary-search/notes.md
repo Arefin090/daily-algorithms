@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Performance: best/average/worst case analysis
+
 - Memory usage: O(1) space optimization possible
 
 - Memory usage: O(1) space optimization possible
