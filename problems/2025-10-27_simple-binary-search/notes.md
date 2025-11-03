@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Comparison with similar algorithms
+
 - Performance: best/average/worst case analysis
 
 - Memory usage: O(1) space optimization possible
