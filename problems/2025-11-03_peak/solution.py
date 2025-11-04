@@ -10,7 +10,6 @@ Addison Wesley 2006: Chapter 5 Solved Exercise 1)
 
 from __future__ import annotations
 
-
 def peak(lst: list[int]) -> int:
     """
     Return the peak value of `lst`.
@@ -46,7 +45,6 @@ def peak(lst: list[int]) -> int:
         if len(lst[:m]) == 2:
             m += 1
         return peak(lst[:m])
-
 
 if __name__ == "__main__":
     import doctest
