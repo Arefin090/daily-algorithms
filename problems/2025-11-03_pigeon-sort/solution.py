@@ -12,7 +12,6 @@ python pigeon_sort.py
 
 from __future__ import annotations
 
-
 def pigeon_sort(array: list[int]) -> list[int]:
     """
     Implementation of pigeon hole sort algorithm
@@ -50,7 +49,6 @@ def pigeon_sort(array: list[int]) -> list[int]:
 
     # Returns the sorted array.
     return array
-
 
 if __name__ == "__main__":
     import doctest
