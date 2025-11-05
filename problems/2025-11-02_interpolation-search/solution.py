@@ -2,7 +2,6 @@
 This is pure Python implementation of interpolation search algorithm
 """
 
-
 def interpolation_search(sorted_collection: list[int], item: int) -> int | None:
     """
     Searches for an item in a sorted collection by interpolation search algorithm.
@@ -72,7 +71,6 @@ def interpolation_search(sorted_collection: list[int], item: int) -> int | None:
             left = point + 1
     return None
 
-
 def interpolation_search_by_recursion(
     sorted_collection: list[int], item: int, left: int = 0, right: int | None = None
 ) -> int | None:
@@ -129,7 +127,6 @@ def interpolation_search_by_recursion(
             sorted_collection, item, left, point - 1
         )
     return interpolation_search_by_recursion(sorted_collection, item, point + 1, right)
-
 
 if __name__ == "__main__":
     import doctest
