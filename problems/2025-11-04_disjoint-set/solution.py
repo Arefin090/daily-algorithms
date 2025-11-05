@@ -3,13 +3,11 @@ Disjoint set.
 Reference: https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 """
 
-
 class Node:
     def __init__(self, data: int) -> None:
         self.data = data
         self.rank: int
         self.parent: Node
-
 
 def make_set(x: Node) -> None:
     """
@@ -19,7 +17,6 @@ def make_set(x: Node) -> None:
     # root's rank is 0
     x.rank = 0
     x.parent = x
-
 
 def union_set(x: Node, y: Node) -> None:
     """
@@ -38,7 +35,6 @@ def union_set(x: Node, y: Node) -> None:
         if x.rank == y.rank:
             y.rank += 1
 
-
 def find_set(x: Node) -> Node:
     """
     Return the parent of x
@@ -46,7 +42,6 @@ def find_set(x: Node) -> Node:
     if x != x.parent:
         x.parent = find_set(x.parent)
     return x.parent
-
 
 def find_python_set(node: Node) -> set:
     """
@@ -58,7 +53,6 @@ def find_python_set(node: Node) -> set:
             return s
     msg = f"{node.data} is not in {sets}"
     raise ValueError(msg)
-
 
 def test_disjoint_set() -> None:
     """
@@ -79,7 +73,6 @@ def test_disjoint_set() -> None:
                 assert find_set(node0) != find_set(node1)
             else:
                 assert find_set(node0) == find_set(node1)
-
 
 if __name__ == "__main__":
     test_disjoint_set()
