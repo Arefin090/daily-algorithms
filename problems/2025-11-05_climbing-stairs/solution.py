@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 def climb_stairs(number_of_steps: int) -> int:
     """
     LeetCdoe No.70: Climbing Stairs
@@ -34,7 +33,6 @@ def climb_stairs(number_of_steps: int) -> int:
     for _ in range(number_of_steps - 1):
         current, previous = current + previous, current
     return current
-
 
 if __name__ == "__main__":
     import doctest
