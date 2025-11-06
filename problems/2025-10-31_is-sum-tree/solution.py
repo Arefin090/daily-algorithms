@@ -9,7 +9,6 @@ from __future__ import annotations
 from collections.abc import Iterator
 from dataclasses import dataclass
 
-
 @dataclass
 class Node:
     data: int
@@ -66,7 +65,6 @@ class Node:
                 self.right.is_sum_node if self.right else True,
             )
         )
-
 
 @dataclass
 class BinaryTree:
@@ -150,7 +148,6 @@ class BinaryTree:
         root.left.right = Node(6)
         root.right.right = Node(3)
         return tree
-
 
 if __name__ == "__main__":
     from doctest import testmod
