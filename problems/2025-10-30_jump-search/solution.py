@@ -12,13 +12,10 @@ import math
 from collections.abc import Sequence
 from typing import Any, Protocol, TypeVar
 
-
 class Comparable(Protocol):
     def __lt__(self, other: Any, /) -> bool: ...
 
-
 T = TypeVar("T", bound=Comparable)
-
 
 def jump_search(arr: Sequence[T], item: T) -> int:
     """
@@ -56,7 +53,6 @@ def jump_search(arr: Sequence[T], item: T) -> int:
     if arr[prev] == item:
         return prev
     return -1
-
 
 if __name__ == "__main__":
     user_input = input("Enter numbers separated by a comma:\n").strip()
