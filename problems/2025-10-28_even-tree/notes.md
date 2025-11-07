@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Implementation variant in different languages
+
 - Real-world application in search engines
 
 - Real-world application in search engines
