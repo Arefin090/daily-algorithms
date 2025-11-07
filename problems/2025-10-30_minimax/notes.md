@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Performance: best/average/worst case analysis
+
 - Alternative: iterative vs recursive approach
 
 - 
