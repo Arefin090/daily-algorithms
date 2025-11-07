@@ -6,13 +6,11 @@ from dataclasses import dataclass
 INT_MIN = -sys.maxsize + 1
 INT_MAX = sys.maxsize - 1
 
-
 @dataclass
 class TreeNode:
     val: int = 0
     left: TreeNode | None = None
     right: TreeNode | None = None
-
 
 def max_sum_bst(root: TreeNode | None) -> int:
     """
@@ -70,7 +68,6 @@ def max_sum_bst(root: TreeNode | None) -> int:
 
     solver(root)
     return ans
-
 
 if __name__ == "__main__":
     import doctest
