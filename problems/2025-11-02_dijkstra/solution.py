@@ -33,7 +33,6 @@ vertex.
 
 import heapq
 
-
 def dijkstra(graph, start, end):
     """Return the cost of the shortest path between vertices start and end.
 
@@ -60,7 +59,6 @@ def dijkstra(graph, start, end):
             next_item = cost + c
             heapq.heappush(heap, (next_item, v))
     return -1
-
 
 G = {
     "A": [["B", 2], ["C", 5]],
