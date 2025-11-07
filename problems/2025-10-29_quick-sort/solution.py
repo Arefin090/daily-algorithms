@@ -12,7 +12,6 @@ from __future__ import annotations
 
 from random import randrange
 
-
 def quick_sort(collection: list) -> list:
     """A pure Python implementation of quicksort algorithm.
 
@@ -41,7 +40,6 @@ def quick_sort(collection: list) -> list:
 
     # Recursively sort the lesser and greater groups, and combine with the pivot
     return [*quick_sort(lesser), pivot, *quick_sort(greater)]
-
 
 if __name__ == "__main__":
     # Get user input and convert it into a list of integers
