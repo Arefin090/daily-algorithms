@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Memory usage: O(1) space optimization possible
+
 - Edge case: empty input handling
 
 - Memory usage: O(1) space optimization possible
