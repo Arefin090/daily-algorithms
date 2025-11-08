@@ -15,7 +15,6 @@ def quick_sort(data: list) -> list:
             *quick_sort([e for e in data[1:] if e > data[0]]),
         ]
 
-
 if __name__ == "__main__":
     import doctest
 
