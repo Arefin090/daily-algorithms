@@ -4,7 +4,6 @@ A recursive implementation of the insertion sort algorithm
 
 from __future__ import annotations
 
-
 def rec_insertion_sort(collection: list, n: int):
     """
     Given a collection of numbers and its length, sorts the collections
@@ -34,7 +33,6 @@ def rec_insertion_sort(collection: list, n: int):
 
     insert_next(collection, n - 1)
     rec_insertion_sort(collection, n - 1)
-
 
 def insert_next(collection: list, index: int):
     """
@@ -66,7 +64,6 @@ def insert_next(collection: list, index: int):
     )
 
     insert_next(collection, index + 1)
-
 
 if __name__ == "__main__":
     numbers = input("Enter integers separated by spaces: ")
