@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Comparison with similar algorithms
+
 - 
 
 ## Related Problems
