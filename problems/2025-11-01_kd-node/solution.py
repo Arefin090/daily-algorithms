@@ -8,7 +8,6 @@
 
 from __future__ import annotations
 
-
 class KDNode:
     """
     Represents a node in a KD-Tree.
