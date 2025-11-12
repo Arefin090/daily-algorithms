@@ -10,7 +10,6 @@ Dynamic Programming: up -> down.
 
 import functools
 
-
 def min_distance_up_bottom(word1: str, word2: str) -> int:
     """
     >>> min_distance_up_bottom("intention", "execution")
@@ -41,7 +40,6 @@ def min_distance_up_bottom(word1: str, word2: str) -> int:
         )
 
     return min_distance(0, 0)
-
 
 if __name__ == "__main__":
     import doctest
