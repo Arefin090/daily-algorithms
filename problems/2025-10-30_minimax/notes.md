@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Optimization: early termination condition
+
 - Performance: best/average/worst case analysis
 
 - Alternative: iterative vs recursive approach
