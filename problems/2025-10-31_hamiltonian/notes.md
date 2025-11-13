@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Edge case: empty input handling
+
 - Alternative: iterative vs recursive approach
 
 - Optimization: early termination condition
