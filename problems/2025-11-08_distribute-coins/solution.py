@@ -42,18 +42,15 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import NamedTuple
 
-
 @dataclass
 class TreeNode:
     data: int
     left: TreeNode | None = None
     right: TreeNode | None = None
 
-
 class CoinsDistribResult(NamedTuple):
     moves: int
     excess: int
-
 
 def distribute_coins(root: TreeNode | None) -> int:
     """
@@ -129,7 +126,6 @@ def distribute_coins(root: TreeNode | None) -> int:
         return CoinsDistribResult(result_moves, result_excess)
 
     return get_distrib(root)[0]
-
 
 if __name__ == "__main__":
     import doctest
