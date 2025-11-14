@@ -10,7 +10,6 @@ Given two strings A and B. Find the minimum number of operations to string B suc
 A = B. The permitted operations are removal,  insertion, and substitution.
 """
 
-
 class EditDistance:
     """
     Use :
@@ -85,7 +84,6 @@ class EditDistance:
                     replace = self.dp[i - 1][j - 1]
                     self.dp[i][j] = 1 + min(insert, delete, replace)
         return self.dp[m][n]
-
 
 if __name__ == "__main__":
     solver = EditDistance()
