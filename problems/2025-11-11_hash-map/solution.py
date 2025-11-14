@@ -15,12 +15,10 @@ from typing import TypeVar
 KEY = TypeVar("KEY")
 VAL = TypeVar("VAL")
 
-
 @dataclass(slots=True)
 class _Item[KEY, VAL]:
     key: KEY
     val: VAL
-
 
 class _DeletedItem(_Item):
     def __init__(self) -> None:
@@ -29,9 +27,7 @@ class _DeletedItem(_Item):
     def __bool__(self) -> bool:
         return False
 
-
 _deleted = _DeletedItem()
-
 
 class HashMap(MutableMapping[KEY, VAL]):
     """
@@ -319,7 +315,6 @@ class HashMap(MutableMapping[KEY, VAL]):
             f"{item.key}: {item.val}" for item in self._buckets if item
         )
         return f"HashMap({val_string})"
-
 
 if __name__ == "__main__":
     import doctest
