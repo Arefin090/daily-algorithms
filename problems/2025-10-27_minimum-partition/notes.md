@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Real-world application in search engines
+
 - Optimization: early termination condition
 
 - Real-world application in search engines
