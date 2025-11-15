@@ -6,7 +6,6 @@ Note that only the integer weights 0-1 knapsack problem is solvable
 using dynamic programming.
 """
 
-
 def mf_knapsack(i, wt, val, j):
     """
     This code involves the concept of memory functions. Here we solve the subproblems
@@ -25,7 +24,6 @@ def mf_knapsack(i, wt, val, j):
         f[i][j] = val
     return f[i][j]
 
-
 def knapsack(w, wt, val, n):
     dp = [[0] * (w + 1) for _ in range(n + 1)]
 
@@ -37,7 +35,6 @@ def knapsack(w, wt, val, n):
                 dp[i][w_] = dp[i - 1][w_]
 
     return dp[n][w_], dp
-
 
 def knapsack_with_example_solution(w: int, wt: list, val: list):
     """
@@ -99,7 +96,6 @@ def knapsack_with_example_solution(w: int, wt: list, val: list):
 
     return optimal_val, example_optional_set
 
-
 def _construct_solution(dp: list, wt: list, i: int, j: int, optimal_set: set):
     """
     Recursively reconstructs one of the optimal subsets given
@@ -129,7 +125,6 @@ def _construct_solution(dp: list, wt: list, i: int, j: int, optimal_set: set):
         else:
             optimal_set.add(i)
             _construct_solution(dp, wt, i - 1, j - wt[i - 1], optimal_set)
-
 
 if __name__ == "__main__":
     """
