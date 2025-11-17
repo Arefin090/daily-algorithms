@@ -43,7 +43,6 @@ from typing import Any, TypeVar
 
 T = TypeVar("T")
 
-
 class SegmentTree[T]:
     def __init__(self, arr: list[T], fnc: Callable[[T, T], T]) -> None:
         """
@@ -114,7 +113,6 @@ class SegmentTree[T]:
                 res = self.st[right] if res is None else self.fn(res, self.st[right])
             left, right = (left + 1) // 2, (right - 1) // 2
         return res
-
 
 if __name__ == "__main__":
     from functools import reduce
