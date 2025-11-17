@@ -19,7 +19,6 @@ the optimal choice being,
 merge the two smallest files together at each step (greedy approach).
 """
 
-
 def optimal_merge_pattern(files: list) -> float:
     """Function to merge all the files with optimum cost
 
@@ -48,7 +47,6 @@ def optimal_merge_pattern(files: list) -> float:
         files.append(temp)
         optimal_merge_cost += temp
     return optimal_merge_cost
-
 
 if __name__ == "__main__":
     import doctest
