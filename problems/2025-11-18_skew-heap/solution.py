@@ -7,7 +7,6 @@ from typing import Any, TypeVar
 
 T = TypeVar("T", bound=bool)
 
-
 class SkewNode[T: bool]:
     """
     One node of the skew heap. Contains the value and references to
@@ -85,7 +84,6 @@ class SkewNode[T: bool]:
         result.left = SkewNode.merge(temp, root2)
 
         return result
-
 
 class SkewHeap[T: bool]:
     """
@@ -229,7 +227,6 @@ class SkewHeap[T: bool]:
         IndexError: Can't get top element for the empty heap.
         """
         self._root = None
-
 
 if __name__ == "__main__":
     import doctest
