@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import math
 
-
 class SegmentTree:
     def __init__(self, size: int) -> None:
         self.size = size
@@ -120,7 +119,6 @@ class SegmentTree:
 
     def __str__(self) -> str:
         return str([self.query(1, 1, self.size, i, i) for i in range(1, self.size + 1)])
-
 
 if __name__ == "__main__":
     A = [1, 2, -4, 7, 3, -5, 6, 11, -20, 9, 14, 15, 5, 2, -8]
