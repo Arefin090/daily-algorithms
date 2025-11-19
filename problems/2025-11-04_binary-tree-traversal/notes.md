@@ -14,6 +14,8 @@
 
 ## Personal Notes
 
+- Alternative: iterative vs recursive approach
+
 - Performance: best/average/worst case analysis
 
 - Edge case: empty input handling
