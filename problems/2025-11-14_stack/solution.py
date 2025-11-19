@@ -4,14 +4,11 @@ from typing import TypeVar
 
 T = TypeVar("T")
 
-
 class StackOverflowError(BaseException):
     pass
 
-
 class StackUnderflowError(BaseException):
     pass
-
 
 class Stack[T]:
     """A stack is an abstract data type that serves as a collection of
@@ -157,7 +154,6 @@ class Stack[T]:
         """
         return item in self.stack
 
-
 def test_stack() -> None:
     """
     >>> test_stack()
@@ -205,7 +201,6 @@ def test_stack() -> None:
 
     assert 5 in stack
     assert 55 not in stack
-
 
 if __name__ == "__main__":
     test_stack()
