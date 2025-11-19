@@ -66,7 +66,6 @@ def rotate_array(arr: list[int], steps: int) -> list[int]:
 
     return arr
 
-
 if __name__ == "__main__":
     examples = [
         ([1, 2, 3, 4, 5], 2),
