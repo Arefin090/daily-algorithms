@@ -7,7 +7,6 @@ DIRECTIONS = [
     [0, 1],  # up
 ]
 
-
 # function to search the path
 def search(
     grid: list[list[int]],
@@ -103,7 +102,6 @@ def search(
     for i in range(len(invpath)):
         path.append(invpath[len(invpath) - 1 - i])
     return path, action
-
 
 if __name__ == "__main__":
     grid = [
