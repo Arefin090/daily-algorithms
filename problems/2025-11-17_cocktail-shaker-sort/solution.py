@@ -4,7 +4,6 @@ An implementation of the cocktail shaker sort algorithm in pure Python.
 https://en.wikipedia.org/wiki/Cocktail_shaker_sort
 """
 
-
 def cocktail_shaker_sort(arr: list[int]) -> list[int]:
     """
     Sorts a list using the Cocktail Shaker Sort algorithm.
@@ -57,7 +56,6 @@ def cocktail_shaker_sort(arr: list[int]) -> list[int]:
         start += 1  # Increase the start pointer after each pass
 
     return arr
-
 
 if __name__ == "__main__":
     import doctest
