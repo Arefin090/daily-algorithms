@@ -4,7 +4,6 @@ from collections.abc import Iterator
 from dataclasses import dataclass
 from typing import Any
 
-
 @dataclass
 class Node:
     """
@@ -35,7 +34,6 @@ class Node:
         Node(10)
         """
         return f"Node({self.data})"
-
 
 class LinkedList:
     def __init__(self):
@@ -362,7 +360,6 @@ class LinkedList:
         # Return prev in order to put the head at the end
         self.head = prev
 
-
 def test_singly_linked_list() -> None:
     """
     >>> test_singly_linked_list()
@@ -406,7 +403,6 @@ def test_singly_linked_list() -> None:
 
     linked_list.reverse()
     assert str(linked_list) == " -> ".join(str(i) for i in range(-8, 1))
-
 
 def test_singly_linked_list_2() -> None:
     """
@@ -490,7 +486,6 @@ def test_singly_linked_list_2() -> None:
         "5555 -> 7 -> dlrow olleH -> Node(77345112) -> 100 -> Node(Hello again, world!)"
     )
 
-
 def main():
     from doctest import testmod
 
@@ -523,7 +518,6 @@ def main():
     print("New list:")
     print(linked_list)
     print(f"length of linked_list is : {len(linked_list)}")
-
 
 if __name__ == "__main__":
     main()
