@@ -6,13 +6,11 @@ from __future__ import annotations
 
 import queue
 
-
 class TreeNode:
     def __init__(self, data):
         self.data = data
         self.right = None
         self.left = None
-
 
 def build_tree() -> TreeNode:
     print("\n********Press N to stop entering at any point of time********\n")
@@ -38,7 +36,6 @@ def build_tree() -> TreeNode:
         q.put(right_node)
     raise ValueError("Something went wrong")
 
-
 def pre_order(node: TreeNode) -> None:
     """
     >>> root = TreeNode(1)
@@ -59,7 +56,6 @@ def pre_order(node: TreeNode) -> None:
     print(node.data, end=",")
     pre_order(node.left)
     pre_order(node.right)
-
 
 def in_order(node: TreeNode) -> None:
     """
@@ -82,7 +78,6 @@ def in_order(node: TreeNode) -> None:
     print(node.data, end=",")
     in_order(node.right)
 
-
 def post_order(node: TreeNode) -> None:
     """
     >>> root = TreeNode(1)
@@ -103,7 +98,6 @@ def post_order(node: TreeNode) -> None:
     post_order(node.left)
     post_order(node.right)
     print(node.data, end=",")
-
 
 def level_order(node: TreeNode) -> None:
     """
@@ -131,7 +125,6 @@ def level_order(node: TreeNode) -> None:
             q.put(node_dequeued.left)
         if node_dequeued.right:
             q.put(node_dequeued.right)
-
 
 def level_order_actual(node: TreeNode) -> None:
     """
@@ -167,7 +160,6 @@ def level_order_actual(node: TreeNode) -> None:
         for inner_node in list_:
             q.put(inner_node)
 
-
 # iteration version
 def pre_order_iter(node: TreeNode) -> None:
     """
@@ -198,7 +190,6 @@ def pre_order_iter(node: TreeNode) -> None:
         # start to traverse its right child
         n = n.right
 
-
 def in_order_iter(node: TreeNode) -> None:
     """
     >>> root = TreeNode(1)
@@ -225,7 +216,6 @@ def in_order_iter(node: TreeNode) -> None:
         n = stack.pop()
         print(n.data, end=",")
         n = n.right
-
 
 def post_order_iter(node: TreeNode) -> None:
     """
@@ -257,13 +247,11 @@ def post_order_iter(node: TreeNode) -> None:
     while stack2:  # pop up from stack2 will be the post order
         print(stack2.pop().data, end=",")
 
-
 def prompt(s: str = "", width=50, char="*") -> str:
     if not s:
         return "\n" + width * char
     left, extra = divmod(width - len(s) - 2, 2)
     return f"{left * char} {s} {(left + extra) * char}"
-
 
 if __name__ == "__main__":
     import doctest
