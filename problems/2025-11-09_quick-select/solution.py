@@ -7,7 +7,6 @@ https://en.wikipedia.org/wiki/Quickselect
 
 import random
 
-
 def _partition(data: list, pivot) -> tuple:
     """
     Three way partition the data into smaller, equal and greater lists,
@@ -25,7 +24,6 @@ def _partition(data: list, pivot) -> tuple:
         else:
             equal.append(element)
     return less, equal, greater
-
 
 def quick_select(items: list, index: int):
     """
@@ -60,7 +58,6 @@ def quick_select(items: list, index: int):
     # must be in larger
     else:
         return quick_select(larger, index - (m + count))
-
 
 def median(items: list):
     """
