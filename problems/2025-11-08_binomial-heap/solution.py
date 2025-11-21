@@ -3,7 +3,6 @@ Binomial Heap
 Reference: Advanced Data Structures, Peter Brass
 """
 
-
 class Node:
     """
     Node in a doubly-linked binomial tree, containing:
@@ -44,7 +43,6 @@ class Node:
             other.left_tree_size = other.left_tree_size * 2 + 1
             return other
 
-
 class BinomialHeap:
     r"""
     Min-oriented priority queue implemented with the Binomial Heap data
@@ -81,7 +79,6 @@ class BinomialHeap:
     >>> vals = [17, 20, 31, 34]
     >>> for value in vals:
     ...     second_heap.insert(value)
-
 
     The heap should have the following structure:
 
@@ -392,7 +389,6 @@ class BinomialHeap:
         preorder_heap = self.pre_order()
 
         return "\n".join(("-" * level + str(value)) for value, level in preorder_heap)
-
 
 # Unit Tests
 if __name__ == "__main__":
