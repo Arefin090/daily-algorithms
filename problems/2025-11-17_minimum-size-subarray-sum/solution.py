@@ -1,6 +1,5 @@
 import sys
 
-
 def minimum_subarray_sum(target: int, numbers: list[int]) -> int:
     """
     Return the length of the shortest contiguous subarray in a list of numbers whose sum
